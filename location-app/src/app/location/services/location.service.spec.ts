@@ -25,7 +25,7 @@ describe('LocationService', () => {
   }));
 
   /**
-   * Validating getLocation
+   * Validating getLocation success
    */
   it('should call getLocation service to get location info as per address',
    inject([LocationService, XHRBackend], (service: LocationService, mockBackend: MockBackend) => {
@@ -43,6 +43,9 @@ describe('LocationService', () => {
       });
   }));
 
+  /**
+   * Validating getLocation error
+   */
   it('should validate error scenario for getLocation service', inject([LocationService, XHRBackend],
     (service: LocationService, mockBackend: MockBackend) => {
       mockBackend.connections.subscribe((connection) => {
