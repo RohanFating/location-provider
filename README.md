@@ -5,8 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup and Installation
 1. git clone https://github.com/RohanFating/location-provider.git
-2. Go to folder location-provider/location-app
-3. Open terminal and run command - npm install
+2. Open terminal and Go to folder location-provider/location-app
+3. Run command in terminal - npm install
 4. To launch application run command - npm start / ng serve
 5. open "http://localhost:4200/" in browser
 6. To run unit test run command in terminal - ng test / npm run test

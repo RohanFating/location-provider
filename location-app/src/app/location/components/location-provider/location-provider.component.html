@@ -2,9 +2,10 @@
   <div class="location__wrapper col-md-12 border p-3 rounded align-self-center">
 
   <h4 class="col-12 mb-3">Find you location</h4>
+  <hr class="mx-3">
   <div class="col-12 my-3">
-      <b>Your Address</b>
-    <input placeholder="Enter your address here" 
+      <span>Address</span>
+    <input placeholder="Address" 
           [(ngModel)]="locationFormModel.address" 
           (blur)="getLocation()" 
           (keyup.enter)="getLocation()" 
@@ -12,15 +13,15 @@
           class="form-control add-cake__comment col-md-12" />
   </div>
   <div class="col-12 my-3">
-      <b>Lattitude</b>
-      <input placeholder="Lattitude" 
+      <span>Latitude</span>
+      <input placeholder="Latitude" 
              [ngModel]= 'locationFormModel.latitude'
             class="form-control add-cake__comment col-md-12" 
             readonly/>
     </div>
   <div class="col-12 my-3">
-    <b>Logitude</b>
-    <input placeholder="Logitude" 
+    <span>Longitude</span>
+    <input placeholder="Longitude" 
            [ngModel]= 'locationFormModel.longitude' 
            class="form-control add-cake__comment col-md-12" 
            readonly />
