@@ -1,15 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { LocationService } from '../../services/location.service';
+import { LocationModel, LocationResponse } from '../../interfaces/location.interface';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
+/**
+ * LocationProviderComponent to render location view and handling location events
+ */
 @Component({
   selector: 'app-location-provider',
   templateUrl: './location-provider.component.html',
-  styleUrls: ['./location-provider.component.scss']
+  providers: [ LocationService ]
 })
-export class LocationProviderComponent implements OnInit {
+export class LocationProviderComponent {
 
-  constructor() { }
+  public locationFormModel: LocationModel;
+  public errorMessage: ErrorObservable | string;
+  private locationService: LocationService;
 
-  ngOnInit() {
+  /**
+   * @constructor
+   * @param {LocationService} locationService - location service to get location details
+   */
+  constructor( locationService: LocationService) {
+    this.locationService = locationService;
+    this.locationFormModel = {
+      address: '',
+      latitude: '',
+      longitude: ''
+    };
+  }
+
+  /**
+   * To get location details
+   */
+  public getLocation() {
+    if ( this.locationFormModel.address.length > 0 ) {
+      this.locationService.getLocation( this.locationFormModel.address ).subscribe(
+        ( data: LocationResponse ) => {
+           this.locationFormModel.latitude = data.latitude;
+           this.locationFormModel.longitude = data.longitude;
+        },
+        ( error: ErrorObservable ) => {
+         this.errorMessage = error;
+        });
+    }
+  }
+
+  /**
+   * To clear lat long model in case start changing address
+   */
+  public clearLatLongModel() {
+    this.locationFormModel.latitude = '';
+    this.locationFormModel.longitude = '';
+    this.errorMessage = '';
   }
 
 }

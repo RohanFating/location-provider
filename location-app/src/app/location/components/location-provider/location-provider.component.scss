@@ -1,0 +1,8 @@
+.location{
+
+    height: 100vh;
+    display: flex;
+    &__wrapper{
+        background:$color-grey-50;
+    }
+}
