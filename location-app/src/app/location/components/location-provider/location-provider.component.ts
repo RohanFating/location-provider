@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LocationService } from '../../services/location.service';
-import { LocationModel, LocationResponse } from '../../interfaces/location.interface';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { LocationModel, LocationResponse } from '../../interfaces/location.interface';
 
 /**
  * LocationProviderComponent to render location view and handling location events

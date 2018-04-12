@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { map, catchError } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { AppConstant } from '../../constants/constants';
 import { API_BASE_URL } from '../../config/app.config';
 import { LocationResponse } from '../interfaces/location.interface';
-import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class LocationService {

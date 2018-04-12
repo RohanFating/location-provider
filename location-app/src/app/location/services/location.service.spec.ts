@@ -1,8 +1,8 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { LocationService } from './location.service';
 import { BaseRequestOptions, XHRBackend, ResponseOptions, Response } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import { LocationService } from './location.service';
 import { LOCATION_MOCK_RESPONSE } from './mock-location.response';
 import { AppConstant } from '../../constants/constants';
 import { LocationResponse } from '../interfaces/location.interface';
